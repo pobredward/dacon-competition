@@ -1,5 +1,3 @@
-# 손동작 분류 경진대회
-
 ![leaderboard](image/leaderboard.png)
 
 ## **대회 일정 Timeline**
