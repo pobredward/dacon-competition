@@ -1,5 +1,3 @@
-# 전복 나이 예측 경진대회
-
 ![leaderboard.png](image/leaderboard.png)
 
 ## 대회 일정 Timeline
