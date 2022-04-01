@@ -1,5 +1,5 @@
 ![leaderboard.png](image/leaderboard.png)
-![structure.jpeg](image/structure.jpeg)
+![structure.jpg](image/structure.jpg)
 
 ## 대회 일정 Timeline
 
