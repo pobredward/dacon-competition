@@ -1,6 +1,6 @@
 # 전복 나이 예측 경진대회
 
-![leaderboard.png](%E1%84%8C%E1%85%A5%E1%86%AB%E1%84%87%E1%85%A9%E1%86%A8%20%E1%84%82%E1%85%A1%E1%84%8B%20db95c/leaderboard.png)
+![leaderboard.png](image/leaderboard.png)
 
 ## 대회 일정 Timeline
 
