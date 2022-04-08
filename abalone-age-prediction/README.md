@@ -1,3 +1,6 @@
+## LEADERBOARD
+- 코드 공유 특별상 (데이콘 후드 보상) 및 대회 리더보드 3위 보상 획득
+- Private LB 7위
 ![leaderboard2.png](image/leaderboard2.png)
 ![leaderboard.png](image/leaderboard.png)
 
