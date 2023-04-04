@@ -1,0 +1,641 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>세번째 모임</title><style>
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, YuMincho, "Yu Mincho", "Hiragino Mincho ProN", "Hiragino Mincho Pro", "Songti TC", "Songti SC", "SimSun", "Nanum Myeongjo", NanumMyeongjo, Batang, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC', 'Noto Sans CJK KR'; }
+
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC', 'Noto Sans Mono CJK KR'; }
+
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="6a0ec015-41e6-4466-874b-ac5e80f2d76d" class="page sans"><header><h1 class="page-title">세번째 모임</h1><table class="properties"><tbody><tr class="property-row property-row-date"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesDate"><path d="M10.8889,5.5 L3.11111,5.5 L3.11111,7.05556 L10.8889,7.05556 L10.8889,5.5 Z M12.4444,1.05556 L11.6667,1.05556 L11.6667,0 L10.1111,0 L10.1111,1.05556 L3.88889,1.05556 L3.88889,0 L2.33333,0 L2.33333,1.05556 L1.55556,1.05556 C0.692222,1.05556 0.00777777,1.75556 0.00777777,2.61111 L0,12.5 C0,13.3556 0.692222,14 1.55556,14 L12.4444,14 C13.3,14 14,13.3556 14,12.5 L14,2.61111 C14,1.75556 13.3,1.05556 12.4444,1.05556 Z M12.4444,12.5 L1.55556,12.5 L1.55556,3.94444 L12.4444,3.94444 L12.4444,12.5 Z M8.55556,8.61111 L3.11111,8.61111 L3.11111,10.1667 L8.55556,10.1667 L8.55556,8.61111 Z"></path></svg></span>날짜</th><td><time>@2021년 5월 17일</time></td></tr><tr class="property-row property-row-file"><th><span class="icon property-icon"><svg viewBox="0 0 14 14" style="width:14px;height:14px;display:block;fill:rgba(55, 53, 47, 0.4);flex-shrink:0;-webkit-backface-visibility:hidden" class="typesFile"><path d="M5.94578,14 C4.62416,14 3.38248,13.4963 2.44892,12.585 C1.514641,11.6736 1,10.4639 1,9.17405 C1.00086108,7.88562 1.514641,6.67434 2.44892,5.76378 L7.45612,0.985988 C8.80142,-0.327216 11.1777,-0.332396 12.5354,0.992848 C13.9369,2.36163 13.9369,4.58722 12.5354,5.95418 L8.03046,10.2414 C7.16278,11.0877 5.73682,11.0894 4.86024,10.2345 C3.98394,9.37789 3.98394,7.98769 4.86024,7.1327 L6.60422,5.4317 L7.87576,6.67196 L6.13177,8.37297 C6.01668,8.48539 6.00003,8.61545 6.00003,8.68335 C6.00003,8.75083 6.01668,8.88103 6.13177,8.99429 C6.36197,9.21689 6.53749,9.21689 6.76768,8.99429 L11.2707,4.70622 C11.9645,4.03016 11.9645,2.91757 11.2638,2.23311 C10.5843,1.57007 9.40045,1.57007 8.72077,2.23311 L3.71342,7.0109 C3.12602,7.58406 2.79837,8.35435 2.79837,9.17405 C2.79837,9.99459 3.12602,10.7654 3.72045,11.3446 C4.90947,12.5062 6.98195,12.5062 8.17096,11.3446 L10.41911,9.15165 L11.6906,10.3919 L9.4425,12.585 C8.50808,13.4963 7.2664,14 5.94578,14 Z"></path></svg></span>스프레드시트 링크</th><td></td></tr></tbody></table></header><div class="page-body"><nav id="d25c2da7-94ad-488a-9947-d37bea37f98c" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c099775f-2cf2-476b-84cd-fce3c7dfc2b1">1. 성범님 파트</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#ef20538a-f6f1-4069-b4d3-16ffffe690c4">1) L1 &amp; L2 Regularization in LGBM</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#5f9cf242-6c26-40f1-b2fe-ccd1a17cbd0d">2) Categorical ration를 만들었고, 이를 활용해서 fe를 해보자</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#8bec9264-852d-42e0-9531-707631313325">3) 어느정도 모델 안정화가 필요한 시점, 잠시 fe의 할애시간 비율 낮추기</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#3ee3432c-1daa-4fb7-8aed-864987d3d951">4) bm 중 최근 날짜에 힘 실어주기(A/B test)</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#4208d4bd-6b63-4c78-acfc-83ce31cfcab1">5) 변수 중요도(Feature Importance &amp; Permutation Importaince)</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#c050df21-1e06-41e3-9a44-d1059b31255f">2. 대선님 파트</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#0c45622c-f807-423d-9a25-dd7b412f4efb">1) feature importance</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#7ac784f4-d0d0-4a16-aa90-53888545cebb">begin month</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#60f3cdf6-b132-4a44-ad20-9a3aee08af53">income total</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#70419e81-6471-4820-8bb9-07f91be6488f">inc, bm, demp에 대해 boxplot을 그려봄</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#6d2a77bf-7217-48cc-93d2-0a486b0044ff">피쳐중요도가 낮은 것 중에 중요하다 생각되는 게 &#x27;income_type&#x27;과 &#x27;occyp_type&#x27;</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#540ed217-6e78-429d-9ee5-f84c7030127f">질문1) occyp type의 경우 특별한 분류를 유의미해질 수 있다라는 것인가?</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#20ae3678-db72-4677-ae66-8b3133c02176">질문2) 변수를 줄이면 성능이 올라가는 것인가?</a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#da8701a3-4ca0-4ec0-818f-b39f26a6154c">질문3) </a></div><div class="table_of_contents-item table_of_contents-indent-2"><a class="table_of_contents-link" href="#ec81b406-6fc0-49ad-8e04-44f712c8d55b">질문4) </a></div></nav><h1 id="c099775f-2cf2-476b-84cd-fce3c7dfc2b1" class="">1. 성범님 파트</h1><h3 id="ef20538a-f6f1-4069-b4d3-16ffffe690c4" class="">1) L1 &amp; L2 Regularization in LGBM</h3><p id="00cebe69-575a-4270-b8f1-792d67320b8c" class="">&gt; 변수를 아주 난사했으니 L2 regularization을 통해 어느정도 feature selection을 봐야겠다.
+
+L2 : 규제 중에 변수를 없애버리는 효과가 있으니 모든 변수를 난사한 뒤에 LGB에 L2 규제를 해볼 것임</p><h3 id="5f9cf242-6c26-40f1-b2fe-ccd1a17cbd0d" class="">2) Categorical ration를 만들었고, 이를 활용해서 fe를 해보자</h3><h3 id="8bec9264-852d-42e0-9531-707631313325" class="">3) 어느정도 모델 안정화가 필요한 시점, 잠시 fe의 할애시간 비율 낮추기</h3><h3 id="3ee3432c-1daa-4fb7-8aed-864987d3d951" class="">4) bm 중 최근 날짜에 힘 실어주기(A/B test)</h3><figure id="ae5a6bad-c372-418a-878d-46b3e8245463" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.34.18.png"><img style="width:624px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.34.18.png"/></a></figure><ul id="a635be62-961c-4d55-a996-ecb463c84471" class="bulleted-list"><li>중간 중간 들어가있는 부분</li></ul><ul id="1e1524b3-2f95-4717-a8ad-116fa0cc431b" class="bulleted-list"><li>빈도 범주화 비율이 얼마나 된지 봄<figure id="b13eae98-ca60-4677-a300-384b0c39937e" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.34.53.png"><img style="width:624px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.34.53.png"/></a></figure><figure id="dfda602b-ab2b-4615-bd03-63435a589b03" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.35.33.png"><img style="width:1286px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.35.33.png"/></a></figure><ul id="60d74b89-8ed2-4087-90ec-a42d2c900443" class="bulleted-list"><li>범주형 변수애 대해 ratio 생성</li></ul><pre id="98ea2e04-4891-4e6d-aba3-6cea3bff765e" class="code code-wrap"><code>income_type
+Commercial associate    23.441811
+Pensioner               16.815966
+State servant            8.141513
+Student                  0.026458
+Working                 51.574253</code></pre><figure id="08f39e0c-b085-4b1e-a40c-806430819723" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.36.48.png"><img style="width:2128px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.36.48.png"/></a></figure><ul id="3e64fab0-fb26-48a4-976e-1487b8f096be" class="bulleted-list"><li>범주형 변수 비율을 가지고 또 해봄</li></ul></li></ul><h3 id="4208d4bd-6b63-4c78-acfc-83ce31cfcab1" class="">5) 변수 중요도(Feature Importance &amp; Permutation Importaince)</h3><ul id="a539ecab-9d62-41c9-9e4f-49cd837fa4d8" class="bulleted-list"><li>FI : 변수가 얼마나 많이 정보이득값으로 계산이 되었고 많이 사용되었느냐 피쳐값을 계산<figure id="33a30844-2b50-44d7-bcca-0f5fa63f1e9e" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.41.09.png"><img style="width:2018px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.41.09.png"/></a></figure></li></ul><ul id="0d9a0f23-f39b-4d4d-a840-b371f85dd7f0" class="bulleted-list"><li>PI : 모든 변수에 대해 ... 결론 : 밑의 변수들은 쓸모가 없다<figure id="5a78c666-57b2-49cb-9630-be38c97a1db8" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.40.12.png"><img style="width:528px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.40.12.png"/></a></figure><figure id="3b273593-2173-482b-8c75-301875a671a7" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.40.34.png"><img style="width:528px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.40.34.png"/></a></figure></li></ul><h1 id="c050df21-1e06-41e3-9a44-d1059b31255f" class="">2. 대선님 파트</h1><h2 id="0c45622c-f807-423d-9a25-dd7b412f4efb" class="">1) feature importance</h2><figure id="ab7a665e-ff8e-4fd1-b8da-f32ce52ff956" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.51.56.png"><img style="width:912px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.51.56.png"/></a></figure><p id="966c9b0a-66ce-45a8-b8b7-c2a62a92d0f3" class="">어떤 경우든지 inc_t, b_m, d_em가 중요도가 높게 나왔는데, 왜 높을까?</p><h3 id="7ac784f4-d0d0-4a16-aa90-53888545cebb" class="">begin month</h3><p id="b07ed24f-324f-4936-8c75-a4648963f16d" class="">0~4구간에 2가 없음, 이런 요소때문에 피쳐중요도가 높다 생각을 함</p><figure id="3d578dcb-12e0-4b4b-a192-a717b5b43606" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.52.46.png"><img style="width:1489px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.52.46.png"/></a></figure><h3 id="60f3cdf6-b132-4a44-ad20-9a3aee08af53" class="">income total</h3><p id="ab536438-5a68-4c65-9457-e16492f0b4ff" class="">로그씌워서 credit별로 분포를 살펴봤는데 어떤 특정 구간에서 특별히 눈에 띄는 게 있진 않았음</p><p id="1a129ec7-3543-4f98-bca7-3413621dc5cc" class="">→ 대선님 생각 : 이 피쳐만으로 중요도가 높다기 보단, 이거와 다른 피쳐가 엮여서 critical한 역할을 하지 않을까? 싶어서 찾아볼 예정</p><figure id="aae243c1-ff0e-47b0-91b3-0ab3e59c0224" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.53.37.png"><img style="width:624px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.53.37.png"/></a></figure><h3 id="70419e81-6471-4820-8bb9-07f91be6488f" class="">inc, bm, demp에 대해 boxplot을 그려봄</h3><ul id="d96fa6d4-9413-4f6e-a1ff-7bb4620dde05" class="bulleted-list"><li>demp : 거의 유사하게 나옴<figure id="d82d1bf2-ea1a-47b5-9533-ddca5f10789d" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.55.12.png"><img style="width:460px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.55.12.png"/></a></figure></li></ul><ul id="fc16a572-ccac-4897-afd5-de931724a792" class="bulleted-list"><li>bm : 중간값과 분위수가 차이가 좀 있음<figure id="b4ad9bd6-1bdb-4391-b2fb-b1a26d3e33cf" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.55.24.png"><img style="width:441px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.55.24.png"/></a></figure></li></ul><ul id="2b42baf4-73ff-48f8-9e25-82f8a12c0e63" class="bulleted-list"><li>inct : 큰 차이는 없었는데, c=2의 아웃라이어가 좀 튐, 평균 분산도 credit별로 큰 차이는 없음<figure id="51c71b95-3c96-4ce8-96ce-37dbeb76157a" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.56.38.png"><img style="width:421px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.56.38.png"/></a></figure><p id="e7383f95-bd68-4361-ab39-30534e46e203" class="">→ 이게 왜 중요할까를 잘 접근해보자</p></li></ul><h3 id="6d2a77bf-7217-48cc-93d2-0a486b0044ff" class="">피쳐중요도가 낮은 것 중에 중요하다 생각되는 게 &#x27;income_type&#x27;과 &#x27;occyp_type&#x27;</h3><figure id="a148c613-43b3-44f8-aec2-f1ac3cd97f8d" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.59.24.png"><img style="width:529px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__12.59.24.png"/></a></figure><ul id="78cccaaa-ab3a-446e-ba36-5b236e9c77d1" class="bulleted-list"><li>occyp_type에서 <span style="border-bottom:0.05em solid"><strong>nan값 중 비율로 치면 54%가 pensioner(연금수령자), 그 외가 50%</strong></span>정도<p id="19bb5a37-5c97-4aa6-ae0f-821ec2347538" class="">→ nan값이 하나의 변수로서 작용을 하기엔 무리가 있다.<div class="indented"><p id="c6ef0a59-2a17-4cb9-becd-9c13d4eefd9a" class=""><mark class="highlight-red"><strong>→ nan값 중에 </strong></mark><mark class="highlight-red"><strong><code>[&#x27;penisoner&#x27;, &#x27;아닌 사람&#x27;]</code></strong></mark><mark class="highlight-red"><strong>으로 나눌 수 있을 듯</strong></mark></p></div></p></li></ul><ul id="a35b80a2-118d-4a9b-b0a9-401bd28e46e5" class="bulleted-list"><li><span style="border-bottom:0.05em solid"><strong>income type과 occyp type</strong></span>을 묶어서 보자<p id="967073a1-32d7-4a41-8f9e-6ffde3679c1d" class="">→ credit=0 : credit=1 : credit=2 = 12 : 24 : 64 란 비율이 대략적으로 유지가 되야 할 것이다라고 생각을 했음</p></li></ul><ul id="bc61aac0-9a82-4117-a267-ff6d432a5604" class="bulleted-list"><li>하나의 변수로서 역할을 하기 위해서는 기준점이 bm처럼 눈에 띄게 어떤 특정한 비율(전체 대비해서는 작은 영역이지만) 특정 영역에서만큼은 확실히 튀는 비율을 가진다면 이건 새로운 변수로서 역할을 할 수 있지 않을까<figure id="bd1a4eb5-4f54-4b46-a321-b302ef182379" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__1.04.45.png"><img style="width:1261px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__1.04.45.png"/></a></figure></li></ul><ul id="a56c9b7c-f648-4a4e-8368-52a8b0595f97" class="bulleted-list"><li><code>income_type + occyp_type</code> 로 새로운 변수로 만듬<figure id="cd63bfda-d26d-4bea-9678-c5e3231bb164" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__1.05.10.png"><img style="width:906px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__1.05.10.png"/></a></figure><figure id="05aaf3f7-71ed-406c-a39c-1cf49dff9fcd" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__1.06.00.png"><img style="width:484px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__1.06.00.png"/></a></figure><ul id="05148d60-6cb4-4e64-8cc8-10efa9f6ed40" class="bulleted-list"><li>총 66가지 경우가 나오고, 이 중 전체의 개수가 <span style="border-bottom:0.05em solid"><strong>20개 이상</strong></span>인 경우만 뽑음<p id="4dc4a7a1-5141-49b2-a9cc-6ceb413d4d72" class="">→ 이 중에서, <span style="border-bottom:0.05em solid"><strong>변수의 c=0 : c=1 : c=2 비율</strong></span>을 살펴봄</p><p id="05cdc897-0a19-4e5a-a878-9cb7c7a39b4f" class="">→ 위의 표에서처럼, 아래 쪽은 전반적으로 그렇게 나옴
+but, 상위 몇개는 기준이 되는 <span style="border-bottom:0.05em solid"><strong>비율이 무너짐</strong></span> 
+(i.e. Working_Waiters/barmen staff, working_secretaries)</p><figure id="9b1f3e45-5c01-4869-ab59-d01486166e64" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__1.09.08.png"><img style="width:408px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__1.09.08.png"/></a></figure><figure id="6b310ac2-bb35-40c7-aabf-ce063797df13" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__1.08.44.png"><img style="width:478px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__1.08.44.png"/></a></figure><p id="9c257f28-ba20-4b7f-82ad-39e94c3995c8" class="">⇒ <span style="border-bottom:0.05em solid"><strong>특정 credit의 비율을 가지는 어떤 하나의 그룹</strong></span>을 넘버링하거나...
+즉 이 자체만으로 클러스터링을 해서 <span style="border-bottom:0.05em solid"><strong>&#x27;새로운 occyp income type 변수&#x27;</strong></span>를 만들면 어떨까</p></li></ul></li></ul><h3 id="540ed217-6e78-429d-9ee5-f84c7030127f" class="">질문1) occyp type의 경우 특별한 분류를 유의미해질 수 있다라는 것인가?</h3><p id="4ec21636-113e-40e5-baed-ffff372d3797" class="">Answer) occyp type이 20개정도 되는데, 이게 원핫이나 레이블인코딩을 할 때 변수가 너무 많다 생각돼서 변수의 개수 자체를 줄이는 과정이 필요함 → 군집을 나눠서, 군집의 특성별로 변수를 나누려 한다.</p><h3 id="20ae3678-db72-4677-ae66-8b3133c02176" class="">질문2) 변수를 줄이면 성능이 올라가는 것인가?</h3><p id="ab3a2916-e89c-4b51-b2cb-4ac4565eca02" class="">Answer) 회귀분석 같은 경우 &#x27;변수제거법&#x27;이라는 것도 있음, 많으면 안좋다라는 건 있음(→ 그럼 줄여야되는 게 맞나 싶긴 함)</p><h3 id="da8701a3-4ca0-4ec0-818f-b39f26a6154c" class="">질문3) </h3><ul id="6bfa33aa-45c5-4467-893e-9bd8cb8bce0d" class="bulleted-list"><li>소득별로 분포를 보고, 소득별로 타입을 묶을 수 있지 않을까? 란 생각을 했었음</li></ul><ul id="7a4922be-2bd9-4ebf-90f9-5f3a4dec0eaa" class="bulleted-list"><li>income total과도 엮을 수 있지 않을까 라는 생각이 듦<figure id="6264a4da-e966-4730-bd3d-dabd1540ed5f" class="image"><a href="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__1.23.49.png"><img style="width:624px" src="%E1%84%89%E1%85%A6%E1%84%87%E1%85%A5%E1%86%AB%E1%84%8D%E1%85%A2%20%E1%84%86%E1%85%A9%E1%84%8B%E1%85%B5%E1%86%B7%20ae5a6badc372418a878d46b3e8245463/_2021-05-17__1.23.49.png"/></a></figure><ul id="f53032b5-38a3-4134-8740-af3006a92174" class="bulleted-list"><li>당장 예를 들면 <code>state servant</code> (= 공무원)<p id="53b58623-c77c-4e73-8a7e-51647ea5a0b8" class="">공무원이 어떻게 occyp_type이 나눠지지 라는 생각을 함
+세로축을 비율로 core staff가 30% 어디에도 core staff가 높은 집단은 없음 
+(student는 모수자체가 적음) 
+state servant는 공무원이고 core staff가 높다. 
+상식적으로 공무원은 봉급이 낮으니까 income type은 새로운 특성을 보일 수 있다 라고 접근할 수도 있지 않을까?</p></li></ul><ul id="492ce4b8-6d75-4e9c-8bcd-d960b75cfa2e" class="bulleted-list"><li>pensioner(연금수령자)는 99%가 nan값으로 찍힌다</li></ul></li></ul><h3 id="ec81b406-6fc0-49ad-8e04-44f712c8d55b" class="">질문4) </h3><p id="029784dc-d58e-4a68-b900-7bd71fd3053a" class="">원핫이 아니라 레이블로 접근한 것 </p><p id="67381ea8-ca8d-45eb-99f2-dfc457c724b5" class="">비율 대비로 sort해서 레이블링 넘버링을 다시하는 것</p><p id="4043567b-a947-4349-813b-24d8ab04331f" class="">지금 라벨인코딩을 하면 처음 나오는 것부터 1을 가져다 쓰는데, 숫자가 커짐에 따라 어떤 특징을 ... </p></div></article></body></html>
