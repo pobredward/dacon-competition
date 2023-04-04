@@ -35,6 +35,3 @@
 ## 4. 참가대상
 
 일반인, 학생 등 누구나
-
-## 커스텀 모델 구조
-![structure.png](image/structure.png)
