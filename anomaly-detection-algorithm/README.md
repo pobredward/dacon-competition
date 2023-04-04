@@ -1,5 +1,5 @@
 ## LEADERBOARD
-- Private LB 37위 / 481
+- Private LB 37위 / 481팀
 ![leaderboard.png](image/leaderboard.png)
 
 ## 대회 일정 Timeline
